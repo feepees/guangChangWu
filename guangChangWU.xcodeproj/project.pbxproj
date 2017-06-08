@@ -7,25 +7,75 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B5F7DCB3B2D0EB940951907 /* libPods-guangChangWU.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AA3A4F24AA0694493768D79 /* libPods-guangChangWU.a */; };
+		941CF3841EDFDBA00055CC04 /* AVAssetWriteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 941CF37D1EDFDBA00055CC04 /* AVAssetWriteManager.m */; };
+		941CF3851EDFDBA00055CC04 /* FMWModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 941CF37F1EDFDBA00055CC04 /* FMWModel.m */; };
+		941CF3861EDFDBA00055CC04 /* FMWriteVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941CF3811EDFDBA00055CC04 /* FMWriteVideoController.m */; };
+		941CF3871EDFDBA00055CC04 /* FMWVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 941CF3831EDFDBA00055CC04 /* FMWVideoView.m */; };
+		941CF38F1EDFDBE10055CC04 /* FMRecordProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 941CF38A1EDFDBE10055CC04 /* FMRecordProgressView.m */; };
+		941CF3901EDFDBE10055CC04 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 941CF38C1EDFDBE10055CC04 /* UIColor+Hex.m */; };
+		941CF3911EDFDBE10055CC04 /* XCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 941CF38E1EDFDBE10055CC04 /* XCFileManager.m */; };
+		941CF3A11EE7DA350055CC04 /* MJHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 941CF3A01EE7DA350055CC04 /* MJHttpTool.m */; };
+		941CF3A31EE800530055CC04 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 941CF3A21EE800530055CC04 /* Foundation+Log.m */; };
+		946D45B21EE8FFBE0049BB90 /* SpecialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 946D45B11EE8FFBE0049BB90 /* SpecialViewController.m */; };
+		946D45BE1EE917B60049BB90 /* EditorContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 946D45B51EE917B60049BB90 /* EditorContentViewController.m */; };
+		946D45BF1EE917B60049BB90 /* EditorContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 946D45B61EE917B60049BB90 /* EditorContentViewController.xib */; };
+		946D45C01EE917B60049BB90 /* FMVideoPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 946D45B81EE917B60049BB90 /* FMVideoPlayController.m */; };
+		946D45C11EE917B60049BB90 /* SelectTpyeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 946D45BA1EE917B60049BB90 /* SelectTpyeViewController.m */; };
+		946D45C21EE917B60049BB90 /* SelectTpyeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 946D45BB1EE917B60049BB90 /* SelectTpyeViewController.xib */; };
+		946D45C31EE917B60049BB90 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 946D45BD1EE917B60049BB90 /* ViewController.m */; };
+		946D45C61EE91E970049BB90 /* YJProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 946D45C51EE91E970049BB90 /* YJProgressHUD.m */; };
 		94B025571ED3C85D00186A8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B025561ED3C85D00186A8A /* main.m */; };
 		94B0255A1ED3C85D00186A8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B025591ED3C85D00186A8A /* AppDelegate.m */; };
-		94B0255D1ED3C85D00186A8A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B0255C1ED3C85D00186A8A /* ViewController.m */; };
 		94B025601ED3C85D00186A8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94B0255E1ED3C85D00186A8A /* Main.storyboard */; };
 		94B025621ED3C85D00186A8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94B025611ED3C85D00186A8A /* Assets.xcassets */; };
 		94B025651ED3C85D00186A8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94B025631ED3C85D00186A8A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1967006FDC7702A1E8580CB6 /* Pods-guangChangWU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guangChangWU.debug.xcconfig"; path = "Pods/Target Support Files/Pods-guangChangWU/Pods-guangChangWU.debug.xcconfig"; sourceTree = "<group>"; };
+		2AA3A4F24AA0694493768D79 /* libPods-guangChangWU.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-guangChangWU.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		941CF37C1EDFDBA00055CC04 /* AVAssetWriteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVAssetWriteManager.h; sourceTree = "<group>"; };
+		941CF37D1EDFDBA00055CC04 /* AVAssetWriteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVAssetWriteManager.m; sourceTree = "<group>"; };
+		941CF37E1EDFDBA00055CC04 /* FMWModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMWModel.h; sourceTree = "<group>"; };
+		941CF37F1EDFDBA00055CC04 /* FMWModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMWModel.m; sourceTree = "<group>"; };
+		941CF3801EDFDBA00055CC04 /* FMWriteVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMWriteVideoController.h; sourceTree = "<group>"; };
+		941CF3811EDFDBA00055CC04 /* FMWriteVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMWriteVideoController.m; sourceTree = "<group>"; };
+		941CF3821EDFDBA00055CC04 /* FMWVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMWVideoView.h; sourceTree = "<group>"; };
+		941CF3831EDFDBA00055CC04 /* FMWVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMWVideoView.m; sourceTree = "<group>"; };
+		941CF3891EDFDBE10055CC04 /* FMRecordProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMRecordProgressView.h; sourceTree = "<group>"; };
+		941CF38A1EDFDBE10055CC04 /* FMRecordProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMRecordProgressView.m; sourceTree = "<group>"; };
+		941CF38B1EDFDBE10055CC04 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		941CF38C1EDFDBE10055CC04 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		941CF38D1EDFDBE10055CC04 /* XCFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCFileManager.h; sourceTree = "<group>"; };
+		941CF38E1EDFDBE10055CC04 /* XCFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCFileManager.m; sourceTree = "<group>"; };
+		941CF3921EDFDC600055CC04 /* VideoHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoHeader.pch; sourceTree = "<group>"; };
+		941CF39F1EE7DA350055CC04 /* MJHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJHttpTool.h; sourceTree = "<group>"; };
+		941CF3A01EE7DA350055CC04 /* MJHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJHttpTool.m; sourceTree = "<group>"; };
+		941CF3A21EE800530055CC04 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Foundation+Log.m"; path = "../Foundation+Log.m"; sourceTree = "<group>"; };
+		946D45B01EE8FFBE0049BB90 /* SpecialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecialViewController.h; path = ../AVAssetWriter/SpecialViewController.h; sourceTree = "<group>"; };
+		946D45B11EE8FFBE0049BB90 /* SpecialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecialViewController.m; path = ../AVAssetWriter/SpecialViewController.m; sourceTree = "<group>"; };
+		946D45B41EE917B60049BB90 /* EditorContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorContentViewController.h; sourceTree = "<group>"; };
+		946D45B51EE917B60049BB90 /* EditorContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorContentViewController.m; sourceTree = "<group>"; };
+		946D45B61EE917B60049BB90 /* EditorContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditorContentViewController.xib; sourceTree = "<group>"; };
+		946D45B71EE917B60049BB90 /* FMVideoPlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMVideoPlayController.h; sourceTree = "<group>"; };
+		946D45B81EE917B60049BB90 /* FMVideoPlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMVideoPlayController.m; sourceTree = "<group>"; };
+		946D45B91EE917B60049BB90 /* SelectTpyeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTpyeViewController.h; sourceTree = "<group>"; };
+		946D45BA1EE917B60049BB90 /* SelectTpyeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTpyeViewController.m; sourceTree = "<group>"; };
+		946D45BB1EE917B60049BB90 /* SelectTpyeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectTpyeViewController.xib; sourceTree = "<group>"; };
+		946D45BC1EE917B60049BB90 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		946D45BD1EE917B60049BB90 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		946D45C41EE91E970049BB90 /* YJProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJProgressHUD.h; sourceTree = "<group>"; };
+		946D45C51EE91E970049BB90 /* YJProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJProgressHUD.m; sourceTree = "<group>"; };
 		94B025521ED3C85D00186A8A /* guangChangWU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = guangChangWU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B025561ED3C85D00186A8A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		94B025581ED3C85D00186A8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		94B025591ED3C85D00186A8A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		94B0255B1ED3C85D00186A8A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		94B0255C1ED3C85D00186A8A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		94B0255F1ED3C85D00186A8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94B025611ED3C85D00186A8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94B025641ED3C85D00186A8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94B025661ED3C85D00186A8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF3773AB4693DB343C881739 /* Pods-guangChangWU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guangChangWU.release.xcconfig"; path = "Pods/Target Support Files/Pods-guangChangWU/Pods-guangChangWU.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +83,80 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B5F7DCB3B2D0EB940951907 /* libPods-guangChangWU.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BF48811EC30A748144EC44E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2AA3A4F24AA0694493768D79 /* libPods-guangChangWU.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		941CF37B1EDFDBA00055CC04 /* AVAssetWriter */ = {
+			isa = PBXGroup;
+			children = (
+				941CF37C1EDFDBA00055CC04 /* AVAssetWriteManager.h */,
+				941CF37D1EDFDBA00055CC04 /* AVAssetWriteManager.m */,
+				941CF37E1EDFDBA00055CC04 /* FMWModel.h */,
+				941CF37F1EDFDBA00055CC04 /* FMWModel.m */,
+				941CF3801EDFDBA00055CC04 /* FMWriteVideoController.h */,
+				941CF3811EDFDBA00055CC04 /* FMWriteVideoController.m */,
+				941CF3821EDFDBA00055CC04 /* FMWVideoView.h */,
+				941CF3831EDFDBA00055CC04 /* FMWVideoView.m */,
+			);
+			path = AVAssetWriter;
+			sourceTree = "<group>";
+		};
+		941CF3881EDFDBE10055CC04 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				946D45C41EE91E970049BB90 /* YJProgressHUD.h */,
+				946D45C51EE91E970049BB90 /* YJProgressHUD.m */,
+				941CF39F1EE7DA350055CC04 /* MJHttpTool.h */,
+				941CF3A01EE7DA350055CC04 /* MJHttpTool.m */,
+				941CF3891EDFDBE10055CC04 /* FMRecordProgressView.h */,
+				941CF38A1EDFDBE10055CC04 /* FMRecordProgressView.m */,
+				941CF38B1EDFDBE10055CC04 /* UIColor+Hex.h */,
+				941CF38C1EDFDBE10055CC04 /* UIColor+Hex.m */,
+				941CF38D1EDFDBE10055CC04 /* XCFileManager.h */,
+				941CF38E1EDFDBE10055CC04 /* XCFileManager.m */,
+				941CF3A21EE800530055CC04 /* Foundation+Log.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		946D45B31EE917B60049BB90 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				946D45B91EE917B60049BB90 /* SelectTpyeViewController.h */,
+				946D45BA1EE917B60049BB90 /* SelectTpyeViewController.m */,
+				946D45BB1EE917B60049BB90 /* SelectTpyeViewController.xib */,
+				946D45B41EE917B60049BB90 /* EditorContentViewController.h */,
+				946D45B51EE917B60049BB90 /* EditorContentViewController.m */,
+				946D45B61EE917B60049BB90 /* EditorContentViewController.xib */,
+				946D45B71EE917B60049BB90 /* FMVideoPlayController.h */,
+				946D45B81EE917B60049BB90 /* FMVideoPlayController.m */,
+				946D45B01EE8FFBE0049BB90 /* SpecialViewController.h */,
+				946D45B11EE8FFBE0049BB90 /* SpecialViewController.m */,
+				946D45BC1EE917B60049BB90 /* ViewController.h */,
+				946D45BD1EE917B60049BB90 /* ViewController.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
 		94B025491ED3C85D00186A8A = {
 			isa = PBXGroup;
 			children = (
 				94B025541ED3C85D00186A8A /* guangChangWU */,
 				94B025531ED3C85D00186A8A /* Products */,
+				CBA163A9BD0B9B84F62BE6DC /* Pods */,
+				2BF48811EC30A748144EC44E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,14 +171,16 @@
 		94B025541ED3C85D00186A8A /* guangChangWU */ = {
 			isa = PBXGroup;
 			children = (
+				946D45B31EE917B60049BB90 /* VC */,
+				941CF3881EDFDBE10055CC04 /* Tool */,
+				941CF37B1EDFDBA00055CC04 /* AVAssetWriter */,
 				94B025581ED3C85D00186A8A /* AppDelegate.h */,
 				94B025591ED3C85D00186A8A /* AppDelegate.m */,
-				94B0255B1ED3C85D00186A8A /* ViewController.h */,
-				94B0255C1ED3C85D00186A8A /* ViewController.m */,
 				94B0255E1ED3C85D00186A8A /* Main.storyboard */,
 				94B025611ED3C85D00186A8A /* Assets.xcassets */,
 				94B025631ED3C85D00186A8A /* LaunchScreen.storyboard */,
 				94B025661ED3C85D00186A8A /* Info.plist */,
+				941CF3921EDFDC600055CC04 /* VideoHeader.pch */,
 				94B025551ED3C85D00186A8A /* Supporting Files */,
 			);
 			path = guangChangWU;
@@ -79,6 +194,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CBA163A9BD0B9B84F62BE6DC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1967006FDC7702A1E8580CB6 /* Pods-guangChangWU.debug.xcconfig */,
+				DF3773AB4693DB343C881739 /* Pods-guangChangWU.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +210,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94B025691ED3C85D00186A8A /* Build configuration list for PBXNativeTarget "guangChangWU" */;
 			buildPhases = (
+				B19F0B48293105CA0181F08D /* [CP] Check Pods Manifest.lock */,
 				94B0254E1ED3C85D00186A8A /* Sources */,
 				94B0254F1ED3C85D00186A8A /* Frameworks */,
 				94B025501ED3C85D00186A8A /* Resources */,
+				17BD1A4C56B1D278A15EA3D0 /* [CP] Embed Pods Frameworks */,
+				F99637CD0E692EE65BE10935 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -139,6 +266,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				94B025651ED3C85D00186A8A /* LaunchScreen.storyboard in Resources */,
+				946D45BF1EE917B60049BB90 /* EditorContentViewController.xib in Resources */,
+				946D45C21EE917B60049BB90 /* SelectTpyeViewController.xib in Resources */,
 				94B025621ED3C85D00186A8A /* Assets.xcassets in Resources */,
 				94B025601ED3C85D00186A8A /* Main.storyboard in Resources */,
 			);
@@ -146,14 +275,76 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		17BD1A4C56B1D278A15EA3D0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-guangChangWU/Pods-guangChangWU-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B19F0B48293105CA0181F08D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F99637CD0E692EE65BE10935 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-guangChangWU/Pods-guangChangWU-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		94B0254E1ED3C85D00186A8A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94B0255D1ED3C85D00186A8A /* ViewController.m in Sources */,
+				941CF3851EDFDBA00055CC04 /* FMWModel.m in Sources */,
+				946D45B21EE8FFBE0049BB90 /* SpecialViewController.m in Sources */,
+				941CF3A11EE7DA350055CC04 /* MJHttpTool.m in Sources */,
+				941CF3901EDFDBE10055CC04 /* UIColor+Hex.m in Sources */,
+				946D45C61EE91E970049BB90 /* YJProgressHUD.m in Sources */,
+				941CF38F1EDFDBE10055CC04 /* FMRecordProgressView.m in Sources */,
+				946D45BE1EE917B60049BB90 /* EditorContentViewController.m in Sources */,
+				941CF3911EDFDBE10055CC04 /* XCFileManager.m in Sources */,
+				941CF3861EDFDBA00055CC04 /* FMWriteVideoController.m in Sources */,
+				946D45C01EE917B60049BB90 /* FMVideoPlayController.m in Sources */,
 				94B0255A1ED3C85D00186A8A /* AppDelegate.m in Sources */,
+				946D45C31EE917B60049BB90 /* ViewController.m in Sources */,
+				941CF3A31EE800530055CC04 /* Foundation+Log.m in Sources */,
+				941CF3871EDFDBA00055CC04 /* FMWVideoView.m in Sources */,
+				946D45C11EE917B60049BB90 /* SelectTpyeViewController.m in Sources */,
 				94B025571ED3C85D00186A8A /* main.m in Sources */,
+				941CF3841EDFDBA00055CC04 /* AVAssetWriteManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,24 +460,32 @@
 		};
 		94B0256A1ED3C85D00186A8A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1967006FDC7702A1E8580CB6 /* Pods-guangChangWU.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = G7H56V4BMV;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/guangChangWU/VideoHeader.pch";
 				INFOPLIST_FILE = guangChangWU/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cc.youdu.guangChangWU;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.youdu.guangChangWu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		94B0256B1ED3C85D00186A8A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF3773AB4693DB343C881739 /* Pods-guangChangWU.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = G7H56V4BMV;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/guangChangWU/VideoHeader.pch";
 				INFOPLIST_FILE = guangChangWU/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cc.youdu.guangChangWU;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.youdu.guangChangWu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -310,6 +509,7 @@
 				94B0256B1ED3C85D00186A8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
