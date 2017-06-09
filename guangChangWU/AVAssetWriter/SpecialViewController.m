@@ -54,13 +54,22 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellId=@"cellId";
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
+    }
     cell.textLabel.text=self.dataSoure[indexPath.item][@"title"];
     cell.detailTextLabel.text=self.dataSoure[indexPath.item][@"note"];
     return cell;
 }
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 1;
+}
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    self.selectSpecial(self.dataSoure[indexPath.item][@"id"],self.dataSoure[indexPath.item][@"id"]);
+    self.selectSpecial(self.dataSoure[indexPath.item][@"id"],self.dataSoure[indexPath.item][@"title"]);
     [self.navigationController popViewControllerAnimated:YES];
 }
 @end

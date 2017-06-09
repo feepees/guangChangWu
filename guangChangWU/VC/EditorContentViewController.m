@@ -41,7 +41,7 @@
     
 }
 - (IBAction)submitAction:(id)sender {
-    if (self.titileTextField.text) {
+    if (!self.titileTextField.text) {
         [YJProgressHUD showMessage:@"请编辑内容" inView:self.view];
         return;
     }
@@ -63,13 +63,12 @@
     [MJHttpTool PostFile:Show parameters:parameter fileUrl:self.fileUrl data:data success:^(id responseObject) {
         NSLog(@"responseObject%@",responseObject);
         [YJProgressHUD hide];
-        if (responseObject[@"code"]) {
+        if ([responseObject[@"code"] isEqualToString:@"0000"]) {
             [YJProgressHUD showSuccess:@"发布成功" inview:self.view];
-            NSLog(@"发布成功");
+            [self.navigationController dismissViewControllerAnimated:YES completion:nil ];
         }
         else{
              [YJProgressHUD showMessage:@"发布失败" inView:self.view];
-            NSLog(@"发布失败");
         }
     } failure:^(NSError *error) {
          [YJProgressHUD hide];

@@ -80,7 +80,13 @@ static AFHTTPSessionManager *manager;
         [formData appendPartWithFileURL:fileUrl name:@"file" fileName:@"file.mp4" mimeType:@"application/octet-stream" error:nil];
         }
         else{
-        [formData appendPartWithFileData:data name:@"file" fileName:@"file.jpg" mimeType:@"image/jpeg"];
+            if (data) {
+                [formData appendPartWithFileData:data name:@"file" fileName:@"file.jpg" mimeType:@"image/jpeg"];
+            }
+            else{
+            
+            }
+        
         }
         
     } progress:^(NSProgress * _Nonnull uploadProgress) {
