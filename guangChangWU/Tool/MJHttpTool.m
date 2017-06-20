@@ -8,6 +8,9 @@
 
 #import "MJHttpTool.h"
 #import "AFNetworking.h"
+@interface MJHttpTool()
+@property(nonatomic,strong)NSURLSessionDownloadTask *downloadTask;
+@end
 static AFHTTPSessionManager *manager;
 @implementation MJHttpTool
 + (void)GET:(NSString *)URLString
@@ -76,7 +79,6 @@ static AFHTTPSessionManager *manager;
         
         if (fileUrl) {
             
-        
         [formData appendPartWithFileURL:fileUrl name:@"file" fileName:@"file.mp4" mimeType:@"application/octet-stream" error:nil];
         }
         else{
@@ -84,13 +86,10 @@ static AFHTTPSessionManager *manager;
                 [formData appendPartWithFileData:data name:@"file" fileName:@"file.jpg" mimeType:@"image/jpeg"];
             }
             else{
-            
             }
-        
         }
-        
     } progress:^(NSProgress * _Nonnull uploadProgress) {
-        NSLog(@"uploadProgress%@",uploadProgress);
+        //NSLog(@"uploadProgress%@",uploadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         success(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -100,6 +99,22 @@ static AFHTTPSessionManager *manager;
     
     
 }
+//文件下载
++(void)fileDownload:(NSString *)urlString progress:(void (^)(NSProgress *downloadProgress)) ProgressBlock taratPath:(NSString *)Path completionHandler:(void(^)(NSURL *filePath))completionHandler{
+    
+    AFHTTPSessionManager *mgr=[MJHttpTool getAFHTTPSessionManager];
+    NSURLRequest *request=[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+       NSURLSessionDownloadTask *dataTask= [mgr downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
+        ProgressBlock(downloadProgress);
+    } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
+        return [NSURL fileURLWithPath:Path];
+    } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
+        completionHandler(filePath);
+    }];
+    
+    [dataTask resume];
+}
+
 +(AFHTTPSessionManager *)getAFHTTPSessionManager{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -114,7 +129,6 @@ static AFHTTPSessionManager *manager;
     return manager;
     
 }
-
 
 
 @end

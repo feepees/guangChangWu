@@ -28,7 +28,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self getFileSize:self.videoUrl.path];
+    [self getVideoLength:self.videoUrl];
     self.view.backgroundColor = [UIColor whiteColor];
     self.videoPlayer = [[MPMoviePlayerController alloc] init];
     [self.videoPlayer.view setFrame:self.view.bounds];
@@ -132,6 +133,7 @@
     editorC.fileUrl=self.videoUrl;
     editorC.user_id=self.user_id;
     editorC.type=@"2";
+    editorC.special_id=self.special_id;
     editorC.image=[self coverIamgeAtTime:1];
     [self presentViewController:navC animated:YES completion:nil];
 }
@@ -187,4 +189,28 @@
     NSLog(@"%@我被销毁了",self);
 }
 
+- (CGFloat) getFileSize:(NSString *)path
+{
+    NSLog(@"%@",path);
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    float filesize = -1.0;
+    if ([fileManager fileExistsAtPath:path]) {
+        NSDictionary *fileDic = [fileManager attributesOfItemAtPath:path error:nil];//获取文件的属性
+        unsigned long long size = [[fileDic objectForKey:NSFileSize] longLongValue];
+        filesize = 1.0*size/1024;
+    }else{
+        NSLog(@"找不到文件");
+    }
+    NSLog(@"filesize%f",filesize);
+    return filesize;
+}//此方法可以获取文件的大小，返回的是单位是KB。
+- (CGFloat) getVideoLength:(NSURL *)URL
+{
+    
+    AVURLAsset *avUrl = [AVURLAsset assetWithURL:URL];
+    CMTime time = [avUrl duration];
+    int second = ceil(time.value/time.timescale);
+    NSLog(@"second%d",second);
+    return second;
+}//此方法可以获取视频文件的时长。
 @end

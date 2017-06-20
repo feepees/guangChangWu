@@ -8,6 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		5B5F7DCB3B2D0EB940951907 /* libPods-guangChangWU.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AA3A4F24AA0694493768D79 /* libPods-guangChangWU.a */; };
+		941C74171EEFEEB700FC2234 /* FMFileVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C74121EEFEEB700FC2234 /* FMFileVideoController.m */; };
+		941C74181EEFEEB700FC2234 /* FMFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C74141EEFEEB700FC2234 /* FMFModel.m */; };
+		941C74191EEFEEB700FC2234 /* FMFVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C74161EEFEEB700FC2234 /* FMFVideoView.m */; };
+		941C74261EF276B400FC2234 /* WMMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C741D1EF276B400FC2234 /* WMMenuItem.m */; };
+		941C74271EF276B400FC2234 /* WMMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C741F1EF276B400FC2234 /* WMMenuView.m */; };
+		941C74281EF276B400FC2234 /* WMProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C74211EF276B400FC2234 /* WMProgressView.m */; };
+		941C74291EF276B400FC2234 /* WMScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C74231EF276B400FC2234 /* WMScrollView.m */; };
+		941C742A1EF276B400FC2234 /* WMPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C74251EF276B400FC2234 /* WMPageController.m */; };
+		941C742D1EF2772A00FC2234 /* VIdeoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C742C1EF2772A00FC2234 /* VIdeoListViewController.m */; };
+		941C74301EF277B800FC2234 /* DownloadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C742F1EF277B800FC2234 /* DownloadingViewController.m */; };
+		941C74331EF277C600FC2234 /* DownloadedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C74321EF277C600FC2234 /* DownloadedViewController.m */; };
+		941C74361EF29EF200FC2234 /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C74351EF29EF200FC2234 /* VideoModel.m */; };
+		941C743F1EF3775C00FC2234 /* DownloadVideoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C743D1EF3775C00FC2234 /* DownloadVideoTableViewCell.m */; };
+		941C74401EF3775C00FC2234 /* DownloadVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 941C743E1EF3775C00FC2234 /* DownloadVideoTableViewCell.xib */; };
+		941C74431EF3CD5B00FC2234 /* UIView+FPErrorPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C74421EF3CD5B00FC2234 /* UIView+FPErrorPage.m */; };
+		941C74461EF3CDD500FC2234 /* MYAlertVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 941C74451EF3CDD500FC2234 /* MYAlertVIew.m */; };
 		941CF3841EDFDBA00055CC04 /* AVAssetWriteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 941CF37D1EDFDBA00055CC04 /* AVAssetWriteManager.m */; };
 		941CF3851EDFDBA00055CC04 /* FMWModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 941CF37F1EDFDBA00055CC04 /* FMWModel.m */; };
 		941CF3861EDFDBA00055CC04 /* FMWriteVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 941CF3811EDFDBA00055CC04 /* FMWriteVideoController.m */; };
@@ -35,6 +51,37 @@
 /* Begin PBXFileReference section */
 		1967006FDC7702A1E8580CB6 /* Pods-guangChangWU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guangChangWU.debug.xcconfig"; path = "Pods/Target Support Files/Pods-guangChangWU/Pods-guangChangWU.debug.xcconfig"; sourceTree = "<group>"; };
 		2AA3A4F24AA0694493768D79 /* libPods-guangChangWU.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-guangChangWU.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		941C74111EEFEEB700FC2234 /* FMFileVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMFileVideoController.h; sourceTree = "<group>"; };
+		941C74121EEFEEB700FC2234 /* FMFileVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMFileVideoController.m; sourceTree = "<group>"; };
+		941C74131EEFEEB700FC2234 /* FMFModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMFModel.h; sourceTree = "<group>"; };
+		941C74141EEFEEB700FC2234 /* FMFModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMFModel.m; sourceTree = "<group>"; };
+		941C74151EEFEEB700FC2234 /* FMFVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMFVideoView.h; sourceTree = "<group>"; };
+		941C74161EEFEEB700FC2234 /* FMFVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMFVideoView.m; sourceTree = "<group>"; };
+		941C741C1EF276B400FC2234 /* WMMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuItem.h; sourceTree = "<group>"; };
+		941C741D1EF276B400FC2234 /* WMMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMenuItem.m; sourceTree = "<group>"; };
+		941C741E1EF276B400FC2234 /* WMMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuView.h; sourceTree = "<group>"; };
+		941C741F1EF276B400FC2234 /* WMMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMenuView.m; sourceTree = "<group>"; };
+		941C74201EF276B400FC2234 /* WMProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMProgressView.h; sourceTree = "<group>"; };
+		941C74211EF276B400FC2234 /* WMProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMProgressView.m; sourceTree = "<group>"; };
+		941C74221EF276B400FC2234 /* WMScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMScrollView.h; sourceTree = "<group>"; };
+		941C74231EF276B400FC2234 /* WMScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMScrollView.m; sourceTree = "<group>"; };
+		941C74241EF276B400FC2234 /* WMPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPageController.h; sourceTree = "<group>"; };
+		941C74251EF276B400FC2234 /* WMPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPageController.m; sourceTree = "<group>"; };
+		941C742B1EF2772A00FC2234 /* VIdeoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIdeoListViewController.h; sourceTree = "<group>"; };
+		941C742C1EF2772A00FC2234 /* VIdeoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIdeoListViewController.m; sourceTree = "<group>"; };
+		941C742E1EF277B800FC2234 /* DownloadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadingViewController.h; sourceTree = "<group>"; };
+		941C742F1EF277B800FC2234 /* DownloadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadingViewController.m; sourceTree = "<group>"; };
+		941C74311EF277C600FC2234 /* DownloadedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadedViewController.h; sourceTree = "<group>"; };
+		941C74321EF277C600FC2234 /* DownloadedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadedViewController.m; sourceTree = "<group>"; };
+		941C74341EF29EF200FC2234 /* VideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoModel.h; sourceTree = "<group>"; };
+		941C74351EF29EF200FC2234 /* VideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoModel.m; sourceTree = "<group>"; };
+		941C743C1EF3775C00FC2234 /* DownloadVideoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadVideoTableViewCell.h; sourceTree = "<group>"; };
+		941C743D1EF3775C00FC2234 /* DownloadVideoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadVideoTableViewCell.m; sourceTree = "<group>"; };
+		941C743E1EF3775C00FC2234 /* DownloadVideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadVideoTableViewCell.xib; sourceTree = "<group>"; };
+		941C74411EF3CD5B00FC2234 /* UIView+FPErrorPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FPErrorPage.h"; sourceTree = "<group>"; };
+		941C74421EF3CD5B00FC2234 /* UIView+FPErrorPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FPErrorPage.m"; sourceTree = "<group>"; };
+		941C74441EF3CDD500FC2234 /* MYAlertVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MYAlertVIew.h; path = WMPageController/MYAlertVIew.h; sourceTree = "<group>"; };
+		941C74451EF3CDD500FC2234 /* MYAlertVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MYAlertVIew.m; path = WMPageController/MYAlertVIew.m; sourceTree = "<group>"; };
 		941CF37C1EDFDBA00055CC04 /* AVAssetWriteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVAssetWriteManager.h; sourceTree = "<group>"; };
 		941CF37D1EDFDBA00055CC04 /* AVAssetWriteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVAssetWriteManager.m; sourceTree = "<group>"; };
 		941CF37E1EDFDBA00055CC04 /* FMWModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMWModel.h; sourceTree = "<group>"; };
@@ -98,6 +145,45 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		941C74101EEFEEB700FC2234 /* FileOut */ = {
+			isa = PBXGroup;
+			children = (
+				941C74111EEFEEB700FC2234 /* FMFileVideoController.h */,
+				941C74121EEFEEB700FC2234 /* FMFileVideoController.m */,
+				941C74131EEFEEB700FC2234 /* FMFModel.h */,
+				941C74141EEFEEB700FC2234 /* FMFModel.m */,
+				941C74151EEFEEB700FC2234 /* FMFVideoView.h */,
+				941C74161EEFEEB700FC2234 /* FMFVideoView.m */,
+			);
+			name = FileOut;
+			path = AVAssetWriter/FileOut;
+			sourceTree = "<group>";
+		};
+		941C741A1EF276B400FC2234 /* WMPageController */ = {
+			isa = PBXGroup;
+			children = (
+				941C741B1EF276B400FC2234 /* WMMenuView */,
+				941C74241EF276B400FC2234 /* WMPageController.h */,
+				941C74251EF276B400FC2234 /* WMPageController.m */,
+			);
+			path = WMPageController;
+			sourceTree = "<group>";
+		};
+		941C741B1EF276B400FC2234 /* WMMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				941C741C1EF276B400FC2234 /* WMMenuItem.h */,
+				941C741D1EF276B400FC2234 /* WMMenuItem.m */,
+				941C741E1EF276B400FC2234 /* WMMenuView.h */,
+				941C741F1EF276B400FC2234 /* WMMenuView.m */,
+				941C74201EF276B400FC2234 /* WMProgressView.h */,
+				941C74211EF276B400FC2234 /* WMProgressView.m */,
+				941C74221EF276B400FC2234 /* WMScrollView.h */,
+				941C74231EF276B400FC2234 /* WMScrollView.m */,
+			);
+			path = WMMenuView;
+			sourceTree = "<group>";
+		};
 		941CF37B1EDFDBA00055CC04 /* AVAssetWriter */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +202,7 @@
 		941CF3881EDFDBE10055CC04 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				941C741A1EF276B400FC2234 /* WMPageController */,
 				946D45C41EE91E970049BB90 /* YJProgressHUD.h */,
 				946D45C51EE91E970049BB90 /* YJProgressHUD.m */,
 				941CF39F1EE7DA350055CC04 /* MJHttpTool.h */,
@@ -127,6 +214,10 @@
 				941CF38D1EDFDBE10055CC04 /* XCFileManager.h */,
 				941CF38E1EDFDBE10055CC04 /* XCFileManager.m */,
 				941CF3A21EE800530055CC04 /* Foundation+Log.m */,
+				941C74411EF3CD5B00FC2234 /* UIView+FPErrorPage.h */,
+				941C74421EF3CD5B00FC2234 /* UIView+FPErrorPage.m */,
+				941C74441EF3CDD500FC2234 /* MYAlertVIew.h */,
+				941C74451EF3CDD500FC2234 /* MYAlertVIew.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -146,6 +237,17 @@
 				946D45B11EE8FFBE0049BB90 /* SpecialViewController.m */,
 				946D45BC1EE917B60049BB90 /* ViewController.h */,
 				946D45BD1EE917B60049BB90 /* ViewController.m */,
+				941C742B1EF2772A00FC2234 /* VIdeoListViewController.h */,
+				941C742C1EF2772A00FC2234 /* VIdeoListViewController.m */,
+				941C742E1EF277B800FC2234 /* DownloadingViewController.h */,
+				941C742F1EF277B800FC2234 /* DownloadingViewController.m */,
+				941C74311EF277C600FC2234 /* DownloadedViewController.h */,
+				941C74321EF277C600FC2234 /* DownloadedViewController.m */,
+				941C74341EF29EF200FC2234 /* VideoModel.h */,
+				941C74351EF29EF200FC2234 /* VideoModel.m */,
+				941C743C1EF3775C00FC2234 /* DownloadVideoTableViewCell.h */,
+				941C743D1EF3775C00FC2234 /* DownloadVideoTableViewCell.m */,
+				941C743E1EF3775C00FC2234 /* DownloadVideoTableViewCell.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -173,6 +275,7 @@
 			children = (
 				946D45B31EE917B60049BB90 /* VC */,
 				941CF3881EDFDBE10055CC04 /* Tool */,
+				941C74101EEFEEB700FC2234 /* FileOut */,
 				941CF37B1EDFDBA00055CC04 /* AVAssetWriter */,
 				94B025581ED3C85D00186A8A /* AppDelegate.h */,
 				94B025591ED3C85D00186A8A /* AppDelegate.m */,
@@ -270,6 +373,7 @@
 				946D45C21EE917B60049BB90 /* SelectTpyeViewController.xib in Resources */,
 				94B025621ED3C85D00186A8A /* Assets.xcassets in Resources */,
 				94B025601ED3C85D00186A8A /* Main.storyboard in Resources */,
+				941C74401EF3775C00FC2234 /* DownloadVideoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,21 +432,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				941C74171EEFEEB700FC2234 /* FMFileVideoController.m in Sources */,
+				941C74461EF3CDD500FC2234 /* MYAlertVIew.m in Sources */,
 				941CF3851EDFDBA00055CC04 /* FMWModel.m in Sources */,
 				946D45B21EE8FFBE0049BB90 /* SpecialViewController.m in Sources */,
 				941CF3A11EE7DA350055CC04 /* MJHttpTool.m in Sources */,
+				941C74191EEFEEB700FC2234 /* FMFVideoView.m in Sources */,
 				941CF3901EDFDBE10055CC04 /* UIColor+Hex.m in Sources */,
+				941C74181EEFEEB700FC2234 /* FMFModel.m in Sources */,
+				941C74291EF276B400FC2234 /* WMScrollView.m in Sources */,
 				946D45C61EE91E970049BB90 /* YJProgressHUD.m in Sources */,
+				941C74331EF277C600FC2234 /* DownloadedViewController.m in Sources */,
 				941CF38F1EDFDBE10055CC04 /* FMRecordProgressView.m in Sources */,
 				946D45BE1EE917B60049BB90 /* EditorContentViewController.m in Sources */,
+				941C742A1EF276B400FC2234 /* WMPageController.m in Sources */,
+				941C743F1EF3775C00FC2234 /* DownloadVideoTableViewCell.m in Sources */,
 				941CF3911EDFDBE10055CC04 /* XCFileManager.m in Sources */,
 				941CF3861EDFDBA00055CC04 /* FMWriteVideoController.m in Sources */,
 				946D45C01EE917B60049BB90 /* FMVideoPlayController.m in Sources */,
+				941C74281EF276B400FC2234 /* WMProgressView.m in Sources */,
+				941C742D1EF2772A00FC2234 /* VIdeoListViewController.m in Sources */,
 				94B0255A1ED3C85D00186A8A /* AppDelegate.m in Sources */,
+				941C74261EF276B400FC2234 /* WMMenuItem.m in Sources */,
 				946D45C31EE917B60049BB90 /* ViewController.m in Sources */,
 				941CF3A31EE800530055CC04 /* Foundation+Log.m in Sources */,
+				941C74271EF276B400FC2234 /* WMMenuView.m in Sources */,
+				941C74431EF3CD5B00FC2234 /* UIView+FPErrorPage.m in Sources */,
 				941CF3871EDFDBA00055CC04 /* FMWVideoView.m in Sources */,
 				946D45C11EE917B60049BB90 /* SelectTpyeViewController.m in Sources */,
+				941C74361EF29EF200FC2234 /* VideoModel.m in Sources */,
+				941C74301EF277B800FC2234 /* DownloadingViewController.m in Sources */,
 				94B025571ED3C85D00186A8A /* main.m in Sources */,
 				941CF3841EDFDBA00055CC04 /* AVAssetWriteManager.m in Sources */,
 			);

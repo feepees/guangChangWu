@@ -9,6 +9,7 @@
 #import "SelectTpyeViewController.h"
 #import "EditorContentViewController.h"
 #import "FMWriteVideoController.h"
+#import "FMFileVideoController.h"
 @interface SelectTpyeViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 @end
@@ -32,12 +33,19 @@
     EditorContentViewController *deitorC=[[EditorContentViewController alloc]init];
     deitorC.user_id=self.user_id;
     deitorC.type=@"0";
+    deitorC.special_id=self.special_id;
     UINavigationController *navC=[[UINavigationController alloc]initWithRootViewController:deitorC];
     [self presentViewController:navC animated:YES completion:nil];
 }
 - (IBAction)videoAction:(id)sender {
-    FMWriteVideoController *fmwC=[[FMWriteVideoController alloc]init];
+//    FMWriteVideoController *fmwC=[[FMWriteVideoController alloc]init];
+//    fmwC.user_id=self.user_id;
+//    UINavigationController *navC=[[UINavigationController alloc]initWithRootViewController:fmwC];
+//    [self presentViewController:navC animated:YES completion:nil];
+    
+    FMFileVideoController *fmwC=[[FMFileVideoController alloc]init];
     fmwC.user_id=self.user_id;
+    fmwC.special_id=self.special_id;
     UINavigationController *navC=[[UINavigationController alloc]initWithRootViewController:fmwC];
     [self presentViewController:navC animated:YES completion:nil];
 }
@@ -55,6 +63,7 @@
     EditorContentViewController *deitorC=[[EditorContentViewController alloc]init];
     deitorC.user_id=self.user_id;
     deitorC.type=@"1";
+    deitorC.special_id=self.special_id;
     deitorC.image=info[UIImagePickerControllerOriginalImage];
     UINavigationController *navC=[[UINavigationController alloc]initWithRootViewController:deitorC];
     [self presentViewController:navC animated:YES completion:nil];

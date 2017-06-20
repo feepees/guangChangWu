@@ -10,4 +10,5 @@
 
 @interface SelectTpyeViewController : UIViewController
 @property(nonatomic,strong)NSString *user_id;
+@property(nonatomic,strong)NSString *special_id;
 @end

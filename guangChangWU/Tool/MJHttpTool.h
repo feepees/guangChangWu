@@ -50,4 +50,14 @@
             data:(NSData *)data
          success:(void (^)(id responseObject))success
          failure:(void (^)(NSError *error))failure;
+
+/**
+ 文件下载
+
+ @param urlString 文件URL
+ @param ProgressBlock 下载进度
+ @param Path 文件下载后的路径
+ @param completionHandler 文件下载完成操作
+ */
++(void)fileDownload:(NSString *)urlString progress:(void (^)(NSProgress *downloadProgress)) ProgressBlock taratPath:(NSString *)Path completionHandler:(void(^)(NSURL *filePath))completionHandler;
 @end

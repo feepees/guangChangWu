@@ -21,10 +21,15 @@
 #define VIDEO_FOLDER @"videoFolder" //视频录制存放文件夹
 
 #define USHARE_DEMO_APPKEY @""
-
+#define WebUrl @"http://test14.xinyv.net"
+//localHost
+#define LocalHost @"http://test14.xinyv.net"
 //API
 #define Show @"http://test14.xinyv.net/API/show/add_show"
 
 #define Special @"http://test14.xinyv.net/API/show/get_special"
+
+//获取视频信息
+#define VideoInfo @"http://test14.xinyv.net/API/show/get_video"
 
 #endif /* VideoHeader_pch */

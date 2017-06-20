@@ -14,6 +14,11 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+  - GPUImage (0.1.7)
+  - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
   - ReactiveObjC (3.0.0)
   - UMengUShare/Core (6.4.4):
@@ -39,6 +44,9 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - FMDB (~> 2.6.2)
+  - GPUImage (~> 0.1.7)
+  - Masonry (~> 1.0.2)
   - MBProgressHUD (~> 1.0.0)
   - ReactiveObjC (~> 3.0.0)
   - UMengUShare/Social/QQ
@@ -48,10 +56,13 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   UMengUShare: cd54ae52958426b79aa9193a7b02058d6a6d9aa0
 
-PODFILE CHECKSUM: a67a9c257ccebc8758c8e7f18f15311db88fb4c0
+PODFILE CHECKSUM: 7fc67112ac6ffd120c677f6671c4df60991c9621
 
 COCOAPODS: 1.2.0

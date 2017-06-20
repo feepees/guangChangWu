@@ -9,10 +9,12 @@
 
 #import "SpecialViewController.h"
 #import "MJHttpTool.h"
+#import <ReactiveObjC.h>
 
 @interface SpecialViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSMutableArray *dataSoure;
+@property(nonatomic,strong)RACCommand *command;
 @end
 
 @implementation SpecialViewController
@@ -35,7 +37,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
-    [self getData];
+    //[self getData];
+    [self getDataCommand];
+    [[self.command execute:nil] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"shuju%@",x);
+        self.dataSoure=x;
+        [self.tableView reloadData];
+    }];
+}
+-(void)dealloc{
+
+    NSLog(@"我被销毁了%@",self);
+}
+-(void)getDataCommand{
+self.command=[[RACCommand alloc]initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+   return  [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        [MJHttpTool GET:Special parameters:nil success:^(id responseObject) {
+            NSLog(@" responseObject%@",responseObject[@"data"]);
+            [subscriber sendNext:responseObject[@"data"]];
+            [subscriber sendCompleted];
+        } failure:^(NSError *error) {
+            NSLog(@"error%@",error);
+        }];
+       return nil;
+   }];
+}];
 }
 -(void)getData{
     [MJHttpTool GET:Special parameters:nil success:^(id responseObject) {

@@ -13,4 +13,7 @@ pod 'UMengUShare/Social/Sina'
 pod ‘UMengUShare/Social/WeChat’
 pod ‘UMengUShare/Social/QQ'
 pod ‘UMengUShare/UI’
+pod 'GPUImage', '~> 0.1.7'
+pod 'FMDB', '~> 2.6.2'
+pod 'Masonry', '~> 1.0.2'
 end

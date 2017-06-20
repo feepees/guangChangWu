@@ -12,4 +12,5 @@
 
 @property (nonatomic, strong) NSURL *videoUrl;
 @property(nonatomic,strong)NSString *user_id;
+@property(nonatomic,strong)NSString *special_id;
 @end
