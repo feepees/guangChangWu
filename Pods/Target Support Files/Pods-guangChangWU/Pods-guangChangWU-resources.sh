@@ -77,6 +77,7 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle"
   install_resource "GPUImage/framework/Resources/lookup.png"
   install_resource "GPUImage/framework/Resources/lookup_amatorka.png"
   install_resource "GPUImage/framework/Resources/lookup_miss_etikate.png"
@@ -88,6 +89,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "UMengUShare/UShareSDK/UMSocialUI/UMSocialSDKResources.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle"
   install_resource "GPUImage/framework/Resources/lookup.png"
   install_resource "GPUImage/framework/Resources/lookup_amatorka.png"
   install_resource "GPUImage/framework/Resources/lookup_miss_etikate.png"

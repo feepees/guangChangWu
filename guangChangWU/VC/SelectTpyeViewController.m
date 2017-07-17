@@ -34,25 +34,23 @@
     deitorC.user_id=self.user_id;
     deitorC.type=@"0";
     deitorC.special_id=self.special_id;
-    UINavigationController *navC=[[UINavigationController alloc]initWithRootViewController:deitorC];
-    [self presentViewController:navC animated:YES completion:nil];
+
+    [self.navigationController pushViewController:deitorC animated:YES];
 }
 - (IBAction)videoAction:(id)sender {
-//    FMWriteVideoController *fmwC=[[FMWriteVideoController alloc]init];
-//    fmwC.user_id=self.user_id;
-//    UINavigationController *navC=[[UINavigationController alloc]initWithRootViewController:fmwC];
-//    [self presentViewController:navC animated:YES completion:nil];
-    
+
     FMFileVideoController *fmwC=[[FMFileVideoController alloc]init];
     fmwC.user_id=self.user_id;
     fmwC.special_id=self.special_id;
-    UINavigationController *navC=[[UINavigationController alloc]initWithRootViewController:fmwC];
-    [self presentViewController:navC animated:YES completion:nil];
+    
+    [self.navigationController pushViewController:fmwC animated:YES];
 }
 - (IBAction)cancleAction:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    self.navigationController.navigationBar.hidden=YES;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -65,7 +63,6 @@
     deitorC.type=@"1";
     deitorC.special_id=self.special_id;
     deitorC.image=info[UIImagePickerControllerOriginalImage];
-    UINavigationController *navC=[[UINavigationController alloc]initWithRootViewController:deitorC];
-    [self presentViewController:navC animated:YES completion:nil];
+    [self.navigationController pushViewController:deitorC animated:YES];
 }
 @end

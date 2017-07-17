@@ -12,12 +12,17 @@
 #import "VideoModel.h"
 #import "DownloadVideoTableViewCell.h"
 #import "UIView+FPErrorPage.h"
+#import "YJProgressHUD.h"
+#import "FMVideoPlayController.h"
+
 @interface DownloadingViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property(nonatomic,strong)NSMutableArray *dataSoure;
+@property(nonatomic,strong)NSMutableArray<VideoModel *> *dataSoure;
 @property(nonatomic,strong)UITableView *tableView;
 @end
 
 @implementation DownloadingViewController
+#pragma mark -------------------------lazy Method---------------------------
+
 -(UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
@@ -35,12 +40,14 @@
     }
     return _dataSoure;
 }
+#pragma mark -------------------------viewcontroller life time---------------------------
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
     [self queryVideoInfo];
-    // Do any additional setup after loading the view.
 }
+
 -(void)queryVideoInfo{
     NSString *dbPath=[[XCFileManager documentsDir] stringByAppendingPathComponent:@"videoInfo.db"];
     FMDatabase *db=[FMDatabase databaseWithPath:dbPath];
@@ -70,11 +77,33 @@
     }
     
 }
+-(void)deleteItem:(NSInteger)index{
+    NSString *dbPath=[[XCFileManager documentsDir] stringByAppendingPathComponent:@"videoInfo.db"];
+    FMDatabase *db=[FMDatabase databaseWithPath:dbPath];
+    if ([db open]) {
+        BOOL ret= [db executeUpdate:@"delete from t_video where unique_id=?",self.dataSoure[index].unique_id];
+        if (ret) {
+            if (![XCFileManager isExistsAtPath:[[XCFileManager documentsDir] stringByAppendingPathComponent:@"video"]]) {
+                [XCFileManager createDirectoryAtPath:[[XCFileManager documentsDir] stringByAppendingPathComponent:@"video"]];
+            }
+            NSString *videoPath=[[XCFileManager documentsDir] stringByAppendingPathComponent:[NSString stringWithFormat:@"video/%@.mp4",self.dataSoure[index].unique_id]];
+            NSLog(@"----videoPath:%@-------",videoPath);
+            [XCFileManager removeItemAtPath:videoPath error:nil];
+            [YJProgressHUD showSuccess:@"删除成功" inview:self.view];
+            [self.dataSoure removeObjectAtIndex:index];
+            [self.tableView reloadData];
+            
+        }
+        else{
+            [YJProgressHUD showMessage:@"删除失败" inView:self.view];
+        }
+    }
+}
+
 #pragma mark -----------------------------UITableViewDelegate-------------------------
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dataSoure.count;
 }
-//
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellId=@"cellId";
     DownloadVideoTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
@@ -85,4 +114,14 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
 }
+- (nullable NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return   @[[UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"取消" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        NSLog(@"%@",indexPath);
+    }],[UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        [self deleteItem:indexPath.item];
+        NSLog(@"%@",indexPath);
+    }]];
+    
+}
+
 @end

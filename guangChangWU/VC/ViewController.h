@@ -10,6 +10,6 @@
 
 @interface ViewController : UIViewController
 
-
+@property(nonatomic,assign)BOOL isReload;
 @end
 

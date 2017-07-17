@@ -26,7 +26,6 @@
     }
     return _titleData;
 }
-//
 - (instancetype)init
 {
     self = [super init];
@@ -70,7 +69,6 @@
 -(void)deleteAction:(UIButton *)button{
     MYAlertVIew *alert=[MYAlertVIew showToView:self.view withTitle:@"确定要删除全部列表么，长按视频可删除单个"];
     alert.comfirmActiom=^{
-        NSLog(@"清楚列表");
         NSString *dbPath=[[XCFileManager documentsDir] stringByAppendingPathComponent:@"videoInfo.db"];
         FMDatabase *db=[FMDatabase databaseWithPath:dbPath];
         if ([db open]) {
@@ -96,7 +94,6 @@
             
             return vcClass;
         }
-            
             break;
         case 1:{
             
@@ -106,7 +103,6 @@
             
         }
             break;
-            
             
         default:
             return nil;

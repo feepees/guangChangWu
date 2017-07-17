@@ -111,6 +111,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>允许访问您的相机</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>运行访问您的位置</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>允许访问您的麦克风</string>
 	<key>NSPhotoLibraryUsageDescription</key>

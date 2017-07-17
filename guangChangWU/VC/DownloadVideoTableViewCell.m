@@ -7,6 +7,7 @@
 //
 
 #import "DownloadVideoTableViewCell.h"
+
 #import <UIImageView+AFNetworking.h>
 @interface DownloadVideoTableViewCell()
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
@@ -24,7 +25,7 @@
     
     NSLog(@"video_img%@",[NSString stringWithFormat:@"%@%@",LocalHost,model.video_img]);
     _model=model;
-    [self.headImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",LocalHost,model.video_img]] placeholderImage:[UIImage imageNamed:@"shuiyin"]];
+    [self.headImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",LocalHost,model.video_img]] placeholderImage:[UIImage imageNamed:@"tupian"]];
     self.titleLable.text=model.name;
     self.sizeLable.text=@"408M";
 }

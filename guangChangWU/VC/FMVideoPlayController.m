@@ -63,7 +63,7 @@
     
     UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [cancelBtn addTarget:self action:@selector(dismissAction) forControlEvents:UIControlEventTouchUpInside];
-    [cancelBtn setImage:[UIImage imageNamed:@"cancel"] forState:UIControlStateNormal];
+    [cancelBtn setImage:[UIImage imageNamed:@"取消"] forState:UIControlStateNormal];
     cancelBtn.frame = CGRectMake(0, 0, 44, 44);
     [imageView addSubview:cancelBtn];
     
@@ -82,10 +82,7 @@
     [super viewWillAppear:animated];
 }
 
-- (void)commit
-{
-    
-}
+
 
 #pragma mark - notification
 #pragma state
@@ -122,20 +119,22 @@
     [self.videoPlayer stop];
     self.videoPlayer = nil;
     [self.navigationController popViewControllerAnimated:YES];
-    //[self.navigationController dismissViewControllerAnimated:YES completion:nil];
 
 }
 - (void)DoneAction
 {
-    
+    if (self.user_id) {
     EditorContentViewController *editorC=[[EditorContentViewController alloc]init];
-    UINavigationController *navC=[[UINavigationController alloc]initWithRootViewController:editorC];
     editorC.fileUrl=self.videoUrl;
     editorC.user_id=self.user_id;
     editorC.type=@"2";
     editorC.special_id=self.special_id;
     editorC.image=[self coverIamgeAtTime:1];
-    [self presentViewController:navC animated:YES completion:nil];
+    [self.navigationController pushViewController:editorC animated:YES];
+    }
+    else{
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
 }
 - (void)viewWillDisappear:(BOOL)animated
 {
@@ -161,7 +160,6 @@
 
 - (UIImage*)coverIamgeAtTime:(NSTimeInterval)time {
     
-    
     [self.videoPlayer requestThumbnailImagesAtTimes:@[@(time)] timeOption:MPMovieTimeOptionNearestKeyFrame];
     
     AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:self.videoUrl options:nil];
@@ -180,13 +178,6 @@
     UIImage*thumbnailImage = thumbnailImageRef ? [[UIImage alloc]initWithCGImage: thumbnailImageRef] : [UIImage new];
     
     return thumbnailImage;
-}
-
--(void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
-    NSLog(@"%@我被销毁了",self);
 }
 
 - (CGFloat) getFileSize:(NSString *)path
@@ -213,4 +204,13 @@
     NSLog(@"second%d",second);
     return second;
 }//此方法可以获取视频文件的时长。
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    NSLog(@"%@我被销毁了",self);
+}
+
+
 @end

@@ -16,4 +16,5 @@ pod ‘UMengUShare/UI’
 pod 'GPUImage', '~> 0.1.7'
 pod 'FMDB', '~> 2.6.2'
 pod 'Masonry', '~> 1.0.2'
+pod 'BaiduMapKit', '~> 3.3.1'
 end

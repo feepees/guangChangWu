@@ -12,8 +12,11 @@
 #import "VideoModel.h"
 #import "DownloadVideoTableViewCell.h"
 #import "UIView+FPErrorPage.h"
+#import "YJProgressHUD.h"
+#import "FMVideoPlayController.h"
+
 @interface DownloadedViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property(nonatomic,strong)NSMutableArray *dataSoure;
+@property(nonatomic,strong)NSMutableArray<VideoModel *> *dataSoure;
 @property(nonatomic,strong)UITableView *tableView;
 @end
 
@@ -69,6 +72,28 @@
     }
     
 }
+-(void)deleteItem:(NSInteger)index{
+    NSString *dbPath=[[XCFileManager documentsDir] stringByAppendingPathComponent:@"videoInfo.db"];
+    FMDatabase *db=[FMDatabase databaseWithPath:dbPath];
+    if ([db open]) {
+       BOOL ret= [db executeUpdate:@"delete from t_video where unique_id=?",self.dataSoure[index].unique_id];
+        if (ret) {
+            if (![XCFileManager isExistsAtPath:[[XCFileManager documentsDir] stringByAppendingPathComponent:@"video"]]) {
+                [XCFileManager createDirectoryAtPath:[[XCFileManager documentsDir] stringByAppendingPathComponent:@"video"]];
+            }
+            NSString *videoPath=[[XCFileManager documentsDir] stringByAppendingPathComponent:[NSString stringWithFormat:@"video/%@.mp4",self.dataSoure[index].unique_id]];
+            NSLog(@"----videoPath:%@-------",videoPath);
+            [XCFileManager removeItemAtPath:videoPath error:nil];
+            [YJProgressHUD showSuccess:@"删除成功" inview:self.view];
+            [self.dataSoure removeObjectAtIndex:index];
+            [self.tableView reloadData];
+            
+        }
+        else{
+            [YJProgressHUD showMessage:@"删除失败" inView:self.view];
+        }
+    }
+}
 #pragma mark -----------------------------UITableViewDelegate-------------------------
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dataSoure.count;
@@ -78,13 +103,48 @@
     static NSString *cellId=@"cellId";
     DownloadVideoTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
     cell.model=self.dataSoure[indexPath.item];
-    
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
     return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    FMVideoPlayController *palyC=[[FMVideoPlayController alloc]init];
+    
+    if (![XCFileManager isExistsAtPath:[[XCFileManager documentsDir] stringByAppendingPathComponent:@"video"]]) {
+        [XCFileManager createDirectoryAtPath:[[XCFileManager documentsDir] stringByAppendingPathComponent:@"video"]];
+    }
+    NSString *videoPath=[[XCFileManager documentsDir] stringByAppendingPathComponent:[NSString stringWithFormat:@"video/%@.mp4",self.dataSoure[indexPath.item].unique_id]];
+    NSLog(@"----videoPath:%@-------",videoPath);
+    palyC.videoUrl=[NSURL fileURLWithPath:videoPath];
+    [self.navigationController pushViewController:palyC animated:YES];
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 1;
+}
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (nullable NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除";
+}
+- (nullable NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(8_0) __TVOS_PROHIBITED{
+  return   @[[UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"取消" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        NSLog(@"%@",indexPath);
+  }],[UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+      [self deleteItem:indexPath.item];
+      NSLog(@"%@",indexPath);
+  }]];
+
+}
+
+
+- (BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
 }
 @end

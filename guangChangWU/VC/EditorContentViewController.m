@@ -11,23 +11,35 @@
 #import "EditorContentViewController.h"
 #import "FMWriteVideoController.h"
 #import "MJHttpTool.h"
-#import <ReactiveObjC/ReactiveObjC.h>
 #import "SpecialViewController.h"
 #import "YJProgressHUD.h"
+
+#import <ReactiveObjC/ReactiveObjC.h>
 #import <GPUImage/GPUImage.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>
 
 
-
-@interface EditorContentViewController ()
+@interface EditorContentViewController ()<BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *titileTextField;
 @property (weak, nonatomic) IBOutlet UILabel *placeHolder;
 @property (weak, nonatomic) IBOutlet UIButton *imageBtn;
 @property(nonatomic,strong)NSString *special;
 @property (weak, nonatomic) IBOutlet UILabel *specialLable;
+@property (weak, nonatomic) IBOutlet UILabel *locationLable;
+@property (weak, nonatomic) IBOutlet UIView *attachmentView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *attachmentHeight;
 
+//BaiduLocation
+@property(nonatomic,strong)BMKLocationService *locServer;
+@property(nonatomic,assign)double lat;
+@property(nonatomic,assign)double loog;
+@property(nonatomic,strong)BMKGeoCodeSearch *searcher;
+@property(nonatomic,copy)NSString *cityName;
 //GPUImage
 @property(nonatomic,strong)GPUImageMovie *movieFile;
+
 
 @property(nonatomic,strong)GPUImageUIElement *landInput;
 @property(nonatomic,strong)GPUImageAlphaBlendFilter *landBlendFilter;
@@ -41,7 +53,6 @@
 @end
 
 @implementation EditorContentViewController
-
 - (IBAction)subjectAction:(id)sender {
 
     SpecialViewController *specialC=[[SpecialViewController alloc]init];
@@ -54,7 +65,7 @@
 }
 
 - (IBAction)photoAction:(id)sender {
-    [self waterfilter];
+    //[self waterfilter];
     
 }
 -(void)GPUImage_waterFilter{
@@ -234,14 +245,14 @@
             [library writeVideoAtPathToSavedPhotosAlbum:outputURL completionBlock:^(NSURL *assetURL, NSError *error){
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if (error) {
-                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Video Saving Failed"
-                                                                       delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"保存到相册失败"
+                                                                       delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil];
                         [alert show];
                     } else {
                         
                         
-                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Video Saved" message:@"Saved To Photo Album"
-                                                                       delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"保存相册" message:@"保存到相册成功"
+                                                                       delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
                         [alert show];
                     }
                 });
@@ -284,8 +295,12 @@
 }
 
 - (IBAction)submitAction:(id)sender {
-    if (!self.titileTextField.text) {
+    if (self.titileTextField.text.length<1) {
         [YJProgressHUD showMessage:@"请编辑内容" inView:self.view];
+        return;
+    }
+    if (!self.special) {
+        [YJProgressHUD showMessage:@"请关联一个专题" inView:self.view];
         return;
     }
     NSMutableDictionary *parameter=[NSMutableDictionary dictionary];
@@ -297,6 +312,9 @@
         parameter[@"special_id"]=@"0";
     }
     parameter[@"fj_type"]=self.type;
+    parameter[@"lat"]=[NSString stringWithFormat:@"%f",self.lat];
+    parameter[@"lng"]=[NSString stringWithFormat:@"%f",self.loog];
+    parameter[@"city_name"]=self.cityName;
     NSData *data;
     if (self.image) {
         data=UIImageJPEGRepresentation(self.image, 0.5);
@@ -308,11 +326,15 @@
         [YJProgressHUD hide];
         if ([responseObject[@"code"] isEqualToString:@"0000"]) {
             [YJProgressHUD showSuccess:@"发布成功" inview:self.view];
-            [self.navigationController dismissViewControllerAnimated:YES completion:nil ];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"sendSuccess" object:nil];
         }
         else{
              [YJProgressHUD showMessage:@"发布失败" inView:self.view];
-        }
+                    }
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self dismissViewControllerAnimated:YES completion:nil];
+        });
+
     } failure:^(NSError *error) {
          [YJProgressHUD hide];
         [YJProgressHUD showMessage:@"网络异常" inView:self.view];
@@ -322,11 +344,17 @@
 - (IBAction)cancelAction:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
--(void)dealloc{
-    NSLog(@"%@我被销毁了",self);
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden=NO;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if ([self.type isEqualToString:@"0"]) {
+        self.attachmentView.hidden=YES;
+        self.attachmentHeight.constant=0;
+    }
     [self setNavigationBar];
     self.view.backgroundColor=[UIColor colorWithRed:240/250.0 green:240/250.0 blue:240/250.0 alpha:1];
 
@@ -336,6 +364,15 @@
     
     if (self.image) {
         [self.imageBtn setBackgroundImage:self.image forState:UIControlStateNormal];
+    }
+    
+    self.locServer=[[BMKLocationService alloc]init];
+    self.locServer.distanceFilter=10;
+    self.locServer.delegate=self;
+    [self.locServer startUserLocationService];
+    
+    if (self.fileUrl) {
+        [self waterfilter];
     }
 }
 
@@ -363,7 +400,7 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.titileTextField endEditing:YES];
 }
-//i374   310   
+
 - (CGFloat) getFileSize:(NSString *)path
 {
     NSLog(@"%@",path);
@@ -388,4 +425,57 @@
     NSLog(@"second%d",second);
     return second;
 }//此方法可以获取视频文件的时长。
+
+#pragma mark -----------------------BMKLocationServerDelegte-------------------
+-(void)didUpdateUserHeading:(BMKUserLocation *)userLocation{
+    NSLog(@"heading is %@",userLocation.heading);
+}
+
+-(void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation{
+    
+    NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
+    self.lat=userLocation.location.coordinate.latitude;
+    self.loog=userLocation.location.coordinate.longitude;
+
+    //反地理编码
+    //发起反向地理编码检索
+    _searcher =[[BMKGeoCodeSearch alloc]init];
+    _searcher.delegate = self;
+    CLLocationCoordinate2D pt = (CLLocationCoordinate2D){userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude};
+    
+    BMKReverseGeoCodeOption *reverseGeoCodeSearchOption = [[
+    BMKReverseGeoCodeOption alloc]init];
+    reverseGeoCodeSearchOption.reverseGeoPoint = pt;
+    BOOL flag = [_searcher reverseGeoCode:reverseGeoCodeSearchOption];
+    if(flag)
+    {
+      NSLog(@"反geo检索发送成功");
+    }
+    else
+    {
+      NSLog(@"反geo检索发送失败");
+    }
+}
+//接收反向地理编码结果
+-(void) onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:
+(BMKReverseGeoCodeResult *)result
+errorCode:(BMKSearchErrorCode)error{
+  if (error == BMK_SEARCH_NO_ERROR) {
+      NSLog(@"result%@  %@",result.address,result.addressDetail.city);
+      self.cityName=result.addressDetail.city;
+      self.locationLable.text=[NSString stringWithFormat:@"城市：%@",result.addressDetail.city];
+  }
+  else {
+      NSLog(@"抱歉，未找到结果");
+  }
+}
+
+//不使用时将delegate设置为 nil
+-(void)viewWillDisappear:(BOOL)animated
+{
+    _searcher.delegate = nil;
+}
+-(void)dealloc{
+    NSLog(@"%@我被销毁了",self);
+}
 @end

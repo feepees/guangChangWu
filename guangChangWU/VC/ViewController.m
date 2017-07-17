@@ -20,7 +20,13 @@
 @end
 
 @implementation ViewController
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if (self.isReload) {
+        [self.web loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:DefaultPage]]];
+        self.isReload=NO;
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIWebView *web=[[UIWebView alloc]initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height-20)];
@@ -32,6 +38,11 @@
     NSURLRequest *request=[NSURLRequest requestWithURL:url];
     [web loadRequest:request];
     [self.view addSubview:web];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noti:) name:@"sendSuccess" object:nil];
+}
+-(void)noti:(NSNotification *)noti{
+    self.isReload=YES;
 }
 -(void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
@@ -95,10 +106,11 @@
          NSArray *a=[request.URL.query componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"=&"]];
          NSLog(@"show userid=%@",a);
          SelectTpyeViewController *selectC=[[SelectTpyeViewController alloc]init];
+         UINavigationController *navC=[[UINavigationController alloc]initWithRootViewController:selectC];
         selectC.user_id=a[1];
          selectC.special_id=a[3];
     
-        [self presentViewController:selectC animated:YES completion:nil];
+        [self presentViewController:navC animated:YES completion:nil];
         return NO;
     }
     if ([request.URL.scheme isEqualToString:@"xiazai"]) {
@@ -110,8 +122,9 @@
         parameter[@"video_type"]=a[3];
        [MJHttpTool Post:VideoInfo parameters:parameter success:^(id responseObject) {
            NSLog(@"responseObject%@",responseObject);
-           
-           [self handlerWithVideoInfo:responseObject[@"data"] andType:a[3]];
+           if (![responseObject[@"data"] isEqual:[NSNull null]]) {
+               [self handlerWithVideoInfo:responseObject[@"data"] andType:a[3]];
+           }
            
        } failure:^(NSError *error) {
            NSLog(@"error%@",error);

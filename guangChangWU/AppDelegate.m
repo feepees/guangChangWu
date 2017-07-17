@@ -18,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //[self setUp_UShare];
+    [self setUp_BMK];
     return YES;
 }
 -(void)setUp_UShare{
@@ -40,6 +41,14 @@
     
     /* 设置新浪的appKey和appSecret */
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"3921700954"  appSecret:@"04b48b094faeb16683c32669824ebdad" redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
+}
+//
+-(void)setUp_BMK{
+    self.mapManager=[[BMKMapManager alloc]init];
+    BOOL ret=[_mapManager start:@"R8GNqH4yIcdFItY3qjai5UgjFhKnrGLe" generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"百度地图启动失败");
+    }
 }
 // 支持所有iOS系统
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation

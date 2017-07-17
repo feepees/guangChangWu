@@ -33,6 +33,8 @@
 		941CF3911EDFDBE10055CC04 /* XCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 941CF38E1EDFDBE10055CC04 /* XCFileManager.m */; };
 		941CF3A11EE7DA350055CC04 /* MJHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 941CF3A01EE7DA350055CC04 /* MJHttpTool.m */; };
 		941CF3A31EE800530055CC04 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 941CF3A21EE800530055CC04 /* Foundation+Log.m */; };
+		942CAD851F0B9D96005D1367 /* STDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 942CAD831F0B9D96005D1367 /* STDBTool.m */; };
+		944619F01F15FB3E006598BD /* lunach.png in Resources */ = {isa = PBXBuildFile; fileRef = 944619EF1F15FB3E006598BD /* lunach.png */; };
 		946D45B21EE8FFBE0049BB90 /* SpecialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 946D45B11EE8FFBE0049BB90 /* SpecialViewController.m */; };
 		946D45BE1EE917B60049BB90 /* EditorContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 946D45B51EE917B60049BB90 /* EditorContentViewController.m */; };
 		946D45BF1EE917B60049BB90 /* EditorContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 946D45B61EE917B60049BB90 /* EditorContentViewController.xib */; };
@@ -100,6 +102,11 @@
 		941CF39F1EE7DA350055CC04 /* MJHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJHttpTool.h; sourceTree = "<group>"; };
 		941CF3A01EE7DA350055CC04 /* MJHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJHttpTool.m; sourceTree = "<group>"; };
 		941CF3A21EE800530055CC04 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Foundation+Log.m"; path = "../Foundation+Log.m"; sourceTree = "<group>"; };
+		942CAD811F0B9D96005D1367 /* DBDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBDefine.h; sourceTree = "<group>"; };
+		942CAD821F0B9D96005D1367 /* STDBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDBTool.h; sourceTree = "<group>"; };
+		942CAD831F0B9D96005D1367 /* STDBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDBTool.m; sourceTree = "<group>"; };
+		942CAD841F0B9D96005D1367 /* Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Table.h; sourceTree = "<group>"; };
+		944619EF1F15FB3E006598BD /* lunach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lunach.png; sourceTree = "<group>"; };
 		946D45B01EE8FFBE0049BB90 /* SpecialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecialViewController.h; path = ../AVAssetWriter/SpecialViewController.h; sourceTree = "<group>"; };
 		946D45B11EE8FFBE0049BB90 /* SpecialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecialViewController.m; path = ../AVAssetWriter/SpecialViewController.m; sourceTree = "<group>"; };
 		946D45B41EE917B60049BB90 /* EditorContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorContentViewController.h; sourceTree = "<group>"; };
@@ -202,6 +209,7 @@
 		941CF3881EDFDBE10055CC04 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				942CAD801F0B9D96005D1367 /* STDB */,
 				941C741A1EF276B400FC2234 /* WMPageController */,
 				946D45C41EE91E970049BB90 /* YJProgressHUD.h */,
 				946D45C51EE91E970049BB90 /* YJProgressHUD.m */,
@@ -220,6 +228,17 @@
 				941C74451EF3CDD500FC2234 /* MYAlertVIew.m */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		942CAD801F0B9D96005D1367 /* STDB */ = {
+			isa = PBXGroup;
+			children = (
+				942CAD811F0B9D96005D1367 /* DBDefine.h */,
+				942CAD821F0B9D96005D1367 /* STDBTool.h */,
+				942CAD831F0B9D96005D1367 /* STDBTool.m */,
+				942CAD841F0B9D96005D1367 /* Table.h */,
+			);
+			path = STDB;
 			sourceTree = "<group>";
 		};
 		946D45B31EE917B60049BB90 /* VC */ = {
@@ -273,6 +292,7 @@
 		94B025541ED3C85D00186A8A /* guangChangWU */ = {
 			isa = PBXGroup;
 			children = (
+				944619EF1F15FB3E006598BD /* lunach.png */,
 				946D45B31EE917B60049BB90 /* VC */,
 				941CF3881EDFDBE10055CC04 /* Tool */,
 				941C74101EEFEEB700FC2234 /* FileOut */,
@@ -374,6 +394,7 @@
 				94B025621ED3C85D00186A8A /* Assets.xcassets in Resources */,
 				94B025601ED3C85D00186A8A /* Main.storyboard in Resources */,
 				941C74401EF3775C00FC2234 /* DownloadVideoTableViewCell.xib in Resources */,
+				944619F01F15FB3E006598BD /* lunach.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +483,7 @@
 				946D45C11EE917B60049BB90 /* SelectTpyeViewController.m in Sources */,
 				941C74361EF29EF200FC2234 /* VideoModel.m in Sources */,
 				941C74301EF277B800FC2234 /* DownloadingViewController.m in Sources */,
+				942CAD851F0B9D96005D1367 /* STDBTool.m in Sources */,
 				94B025571ED3C85D00186A8A /* main.m in Sources */,
 				941CF3841EDFDBA00055CC04 /* AVAssetWriteManager.m in Sources */,
 			);
