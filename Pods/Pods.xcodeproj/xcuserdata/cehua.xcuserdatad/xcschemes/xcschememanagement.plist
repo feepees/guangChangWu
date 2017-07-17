@@ -4,37 +4,37 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AFNetworking.xcscheme</key>
+		<key>AFNetworking.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>FMDB.xcscheme</key>
+		<key>FMDB.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>GPUImage.xcscheme</key>
+		<key>GPUImage.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>MBProgressHUD.xcscheme</key>
+		<key>MBProgressHUD.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Masonry.xcscheme</key>
+		<key>Masonry.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-guangChangWU.xcscheme</key>
+		<key>Pods-guangChangWU.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>ReactiveObjC.xcscheme</key>
+		<key>ReactiveObjC.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

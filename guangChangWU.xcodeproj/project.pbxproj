@@ -361,7 +361,7 @@
 					94B025511ED3C85D00186A8A = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = G7H56V4BMV;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -604,7 +604,7 @@
 			baseConfigurationReference = 1967006FDC7702A1E8580CB6 /* Pods-guangChangWU.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = G7H56V4BMV;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/guangChangWU/VideoHeader.pch";
@@ -613,8 +613,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.youdu.guangChangWu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ab9fb0e5-e2fd-46c8-8a4d-c16f7b02bddd";
-				PROVISIONING_PROFILE_SPECIFIER = GuChangWu_Profile;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -623,7 +623,7 @@
 			baseConfigurationReference = DF3773AB4693DB343C881739 /* Pods-guangChangWU.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = G7H56V4BMV;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/guangChangWU/VideoHeader.pch";
@@ -632,8 +632,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.youdu.guangChangWu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ab9fb0e5-e2fd-46c8-8a4d-c16f7b02bddd";
-				PROVISIONING_PROFILE_SPECIFIER = GuChangWu_Profile;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
